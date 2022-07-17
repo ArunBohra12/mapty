@@ -145,7 +145,7 @@ class App {
       html += `
           <div class="workout__details">
             <span class="workout__icon">⚡️</span>
-            <span class="workout__value">${workout.pace}</span>
+            <span class="workout__value">${workout.toFixed(1)}</span>
             <span class="workout__unit">min/km</span>
           </div>
           <div class="workout__details">
@@ -161,12 +161,12 @@ class App {
       html += `
           <div class="workout__details">
             <span class="workout__icon">⚡️</span>
-            <span class="workout__value">${workout.speed}</span>
+            <span class="workout__value">${workout.speed.toFixed(1)}</span>
             <span class="workout__unit">km/h</span>
           </div>
           <div class="workout__details">
             <span class="workout__icon">⛰</span>
-            <span class="workout__value">${workout.elevationGain}</span>
+            <span class="workout__value">${workout.elevationGain.toFixed(1)}</span>
             <span class="workout__unit">m</span>
           </div>
         </li>
@@ -188,7 +188,8 @@ class App {
       pan: { duration: 1 },
     });
 
-    workout.click();
+    // Need to fix the prototype inheritance here
+    // workout.click();
   }
 
   _setLocalStorage() {
